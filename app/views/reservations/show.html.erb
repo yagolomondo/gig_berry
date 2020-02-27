@@ -1,0 +1,10 @@
+<h1>SHOW PAGE</h1>
+<p>RESERVATION INFO</p>
+<p><%= @reservation.concert_hall.name %></p>
+<p><%= @reservation.concert_hall.location %></p>
+<p><%= @reservation.concert_hall.capacity %></p>
+<p><%= @reservation.concert_hall.styles %></p>
+<p><%= @reservation.concert_hall.price %></p>
+<p><%= @reservation.start_date %></p>
+<p><%= @reservation.end_date %></p>
+<p><%= link_to "Back to index", concert_halls_path %></p>
