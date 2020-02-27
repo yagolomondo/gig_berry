@@ -1,0 +1,23 @@
+<div class="container">
+  <%= simple_form_for @concert_hall do |f| %>
+    <% if @concert_hall.errors.any? %>
+      <div class="error-container">
+        <ul>
+          <% @concert_hall.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+    <div class="form-container">
+      <%= f.input :name %>
+      <% if @concert_hall.new_record? %>
+        <%= f.input :location %>
+      <% end %>
+      <%= f.input :capacity %>
+      <%= f.input :styles %>
+      <%= f.input :price %>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
