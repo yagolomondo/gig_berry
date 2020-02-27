@@ -21,6 +21,14 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <%= f.input :description,
+                hint: "give us a description",
+                required: true,
+                input_html: { autocomplete: "description" } %>
+    <%= f.input :styles,
+                hint: "tell us your style of music",
+                required: true,
+                input_html: { autocomplete: "styles" } %>
   </div>
 
   <div class="form-actions">
