@@ -10,10 +10,12 @@ class ConcertHallsController < ApplicationController
   end
 
   def new
+    authorize @concert_hall
     @concert_hall = ConcertHall.new
   end
 
   def create
+    authorize @concert_hall
     @concert_hall = ConcertHall.new(concert_hall_params)
     @concert_hall.user = current_user
     if @concert_hall.save
@@ -24,9 +26,11 @@ class ConcertHallsController < ApplicationController
   end
 
   def edit
+    authorize @concert_hall
   end
 
   def update
+    authorize @concert_hall
     if @concert_hall.update(concert_hall_params)
       redirect_to concert_hall_path(@concert_hall)
     else
@@ -35,6 +39,7 @@ class ConcertHallsController < ApplicationController
   end
 
   def destroy
+    authorize @concert_hall
     @concert_hall.destroy
     redirect_to concert_halls_path
   end
