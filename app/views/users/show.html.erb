@@ -4,3 +4,4 @@
 <p>Email: <%= current_user.email %></p>
 <p>Styles: <%= current_user.styles %></p>
 <p class="btn btn-primary"><%= link_to "Edit Profile", edit_user_registration_path %></p>
+<p class="btn btn-primary"><%= link_to "Delete Profile", user_registration_path, method: :delete %></p>
