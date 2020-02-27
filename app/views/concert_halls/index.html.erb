@@ -1,0 +1,5 @@
+<h1>Concert Halls</h1>
+<% @concert_halls.each do |concert_hall| %>
+  <p><%= link_to concert_hall.name, concert_hall_path(concert_hall) %></p>
+<% end %>
+<p><%= link_to "Add Concert Hall", new_concert_hall_path %></p>

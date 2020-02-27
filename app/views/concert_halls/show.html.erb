@@ -1,0 +1,4 @@
+<h1><%= @concert_hall.name %></h1>
+<p><%= link_to "Update this Concert Hall", edit_concert_hall_path(@concert_hall) %></p>
+<p><%= link_to "Remove this Concert Hall", concert_hall_path(@concert_hall), method: :delete, data: { confirm: "Are you sure?" } %></p>
+<%= link_to "Back to all Concert Halls", concert_halls_path %>
