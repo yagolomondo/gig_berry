@@ -28,4 +28,7 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
+# Devise gem used for the user authentication and manipulation
 gem 'devise'
+# Pundit gem used for authorization
+gem 'pundit'
