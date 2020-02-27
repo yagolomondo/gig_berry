@@ -3,7 +3,8 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :destroy]
 
   def index
-    @reservations = Reservation.all
+    @concert_hall = ConcertHall.find(params[:concert_hall_id])
+    @reservations = @concert_hall.reservations
   end
 
   def show
@@ -24,7 +25,7 @@ class ReservationsController < ApplicationController
     # @reservation.user = current_user
 
     if @reservation.save
-      redirect_to reservation_path(@reservation)
+      redirect_to concert_hall_reservations_path(@concert_hall)
     else
       render :new
     end
@@ -32,14 +33,14 @@ class ReservationsController < ApplicationController
 
   def destroy
     @reservation.destroy
-    redirect_to reservations_path
+    redirect_to concert_hall_path(@reservation.concert_hall)
   end
 
 
   private
 
   def reservation_params
-    params.require(:reservation).permit(:name, :location, :capacity, :styles, :price)
+    params.require(:reservation).permit(:start_date, :end_date)
   end
 
   def set_reservation

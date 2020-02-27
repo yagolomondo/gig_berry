@@ -1,5 +1,10 @@
 <h1><%= @concert_hall.name %></h1>
+<p>Localização: <%= @concert_hall.location %></p>
+<p>Capacidade: <%= @concert_hall.capacity %></p>
+<p>Estilo musical: <%= @concert_hall.styles %></p>
+<p>Preço: <%= @concert_hall.price %></p>
 <p><%= link_to "Create Reservation", new_concert_hall_reservation_path(@concert_hall) %></p>
+<p><%= link_to "See Your Reservation(s)", concert_hall_reservations_path(@concert_hall) %></p>
 <p><%= link_to "Update this Concert Hall", edit_concert_hall_path(@concert_hall) %></p>
 <p><%= link_to "Remove this Concert Hall", concert_hall_path(@concert_hall), method: :delete, data: { confirm: "Are you sure?" } %></p>
 <%= link_to "Back to all Concert Halls", concert_halls_path %>
