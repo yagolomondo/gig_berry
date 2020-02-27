@@ -1,0 +1,22 @@
+<h1>NEW RESERVATION</h1>
+
+<div class="container">
+  <%= simple_form_for [@concert_hall, @reservation] do |f| %>
+    <% if @reservation.errors.any? %>
+      <div class="error-container">
+        <ul>
+          <% @reservation.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+    <div class="form-container">
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+  <p><%= link_to "Cancel reservation", concert_halls_path %></p>
+
+</div>

@@ -1,5 +1,5 @@
 class ConcertHallsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:show, :new, :edit, :update, :destroy]
   before_action :set_concert_hall, only: [:show, :edit, :update, :destroy]
 
   def index
