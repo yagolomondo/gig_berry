@@ -4,19 +4,21 @@ class ConcertHallsController < ApplicationController
 
   def index
     @concert_halls = ConcertHall.all
+    @concert_halls = policy_scope(ConcertHall).order(created_at: :desc)
   end
 
   def show
+    @concert_halls = policy_scope(ConcertHall).order(created_at: :desc)
   end
 
   def new
-    authorize @concert_hall
     @concert_hall = ConcertHall.new
+    authorize @concert_hall
   end
 
   def create
-    authorize @concert_hall
     @concert_hall = ConcertHall.new(concert_hall_params)
+    authorize @concert_hall
     @concert_hall.user = current_user
     if @concert_hall.save
       redirect_to concert_hall_path(@concert_hall)
