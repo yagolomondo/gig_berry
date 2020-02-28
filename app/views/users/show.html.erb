@@ -4,7 +4,7 @@
 <p>Email: <%= current_user.email %></p>
 <p>Styles: <%= current_user.styles %></p>
 <h4>Reservations</h4>
-<% if current_user.reservations.nil? %>
+<% if current_user.reservations.empty? %>
   <p>No reservations yet ;-;</p>
 <% else %>
   <% current_user.reservations.each do |reservation| %>
