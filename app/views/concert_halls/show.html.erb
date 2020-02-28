@@ -19,7 +19,7 @@
   <% end %>
 <% end %>
 
-<% @concert_halls.each do |concertw_hall| %>
+<% @concert_halls.each do |concert_hall| %>
   <% if policy(concert_hall).destroy? %>
     <p><%= link_to "Remove this Concert Hall", concert_hall_path(@concert_hall), method: :delete, data: { confirm: "Are you sure?" } %></p>
   <% end %>
