@@ -3,19 +3,27 @@
 <p>Capacidade: <%= @concert_hall.capacity %></p>
 <p>Estilo musical: <%= @concert_hall.styles %></p>
 <p>Preço: <%= @concert_hall.price %></p>
-<% if policy(Reservation).create? %>
-	<p><%= link_to "Create Reservation", new_concert_hall_reservation_path(@concert_hall) %>
+
+<% if current_user != @concert_hall.user %>
+	<p><%= link_to "Create a Reservation", new_concert_hall_reservation_path(@concert_hall) %>
 <% end %>
 </p>
-<p><%= link_to "See Your Reservation(s)", concert_hall_reservations_path(@concert_hall) %></p>
-<% @concert_halls.each do |concert_hall| %>
-  <% if policy(concert_hall).edit? %>
-    <p><%= link_to "Update this Concert Hall", edit_concert_hall_path(@concert_hall) %></p>
-  <% end %>
+
+<% if policy(@concert_hall).show? %>
+  <p><%= link_to "See Your Reservation(s)", concert_hall_reservations_path(@concert_hall) %></p>
 <% end %>
-<% @concert_halls.each do |concert_hall| %>
-  <% if policy(concert_hall).edit? %>
-    <p><%= link_to "Remove this Concert Hall", concert_hall_path(@concert_hall), method: :delete, data: { confirm: "Are you sure?" } %></p>
-  <% end %>
+
+<% if policy(@concert_hall).destroy? %>
+  <p><%= link_to "Delete your Reservation", concert_hall_reservations_path(@concert_hall) %></p>
 <% end %>
+
+<% if policy(@concert_hall).edit? %>
+  <p><%= link_to "Update this Concert Hall", edit_concert_hall_path(@concert_hall) %></p>
+<% end %>
+
+<% if policy(@concert_hall).destroy? %>
+  <p><%= link_to "Remove this Concert Hall", concert_hall_path(@concert_hall), method: :delete, data: { confirm: "Are you sure?" } %></p>
+
+<% end %>
+
 <%= link_to "Back to all Concert Halls", concert_halls_path %>

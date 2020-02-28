@@ -5,7 +5,24 @@ class ReservationPolicy < ApplicationPolicy
     end
   end
 
-  def new?
-  	return false if record.user_id == user.id
+  def index
+    record.user == user || record.concert_hall.user == user
   end
+
+  def show
+    record.user == user || record.concert_hall.user == user
+  end
+
+  def new?
+  	record.concert_hall.user != user
+  end
+
+  def create?
+  	new?
+  end
+
+  def destroy?
+    record.user == user || record.concert_hall.user == user
+  end
+
 end
