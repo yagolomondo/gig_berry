@@ -5,11 +5,12 @@ class ReservationsController < ApplicationController
   def index
     @concert_hall = ConcertHall.find(params[:concert_hall_id])
     @reservations = @concert_hall.reservations
+    @reservations = policy_scope(Reservation).order(created_at: :desc)
   end
 
   def show
+    @reservations = policy_scope(Reservation).order(created_at: :desc)
   end
-
 
   def new
     @reservation = Reservation.new
@@ -35,6 +36,7 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+    authorize @reservation
     @reservation.destroy
     redirect_to concert_hall_path(@reservation.concert_hall)
   end
