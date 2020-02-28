@@ -11,5 +11,5 @@
     <p>Reserved <%= reservation.concert_hall.name %> from <%= reservation.start_date.strftime('%d/%m/%Y %H:%M') %> to <%= reservation.end_date.strftime('%d/%m/%Y %H:%M') %></p>
   <% end %>
 <% end  %>
-<p class="btn btn-primary"><%= link_to "Edit Profile", edit_user_registration_path %></p>
-<p class="btn btn-primary"><%= link_to "Delete Profile", user_registration_path, method: :delete %></p>
+<%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary" %>
+<%= link_to "Delete Profile", user_registration_path, method: :delete, class: "btn btn-primary" %>
