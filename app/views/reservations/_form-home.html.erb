@@ -2,28 +2,15 @@
     <div class="section-center">
       <div class="container">
         <div class="row">
-
-
-
-
           <!-- SEARCH FORM -->
           <div class="col-md-4 col-md-pull-7">
             <div class="booking-form">
-<!--
-
-              <%= form_for :concert_hall do |f| %>
-                Your destination: <%= f.text_field :location %><br />
-                <%= f.submit %>
-              <% end %>
-
- -->
 
               <form action="<%= concert_halls_path %>">
                 <div class="form-group">
                   <span class="form-label">Your Destination</span>
                   <input class="form-control" type="text" placeholder="Enter a destination or hotel name">
                 </div>
-
 
                 <div class="row">
                   <div class="col-sm-12">
@@ -54,21 +41,16 @@
                     </div>
                   </div>
                 </div>
-                <!-- BUTTON -->
+                <!-- BUTTON  -->
                 <div class="form-btn">
-                  <h5><%= link_to "Search", concert_halls_path, class: 'submit-btn' %></h5>
+                  <h5><%= submit_tag "Search", class: 'submit-btn' %></h5>
 
-                  <!-- <button class="submit-btn">Search</button> -->
                 </div>
-
               </form>
-            </div>
+         </div>
           </div>
 
-
-
-
-          <!-- DESCRIPTION -->
+         <!-- DESCRIPTION -->
           <div class="col-md-7 col-md-push-5">
             <div class="booking-cta">
               <h1>Book your concert hall !</h1>
