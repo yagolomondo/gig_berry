@@ -6,6 +6,10 @@ class ReservationPolicy < ApplicationPolicy
   end
 
   def new?
-  	return false if record.user_id == user.id
+  	record.concert_hall.user != user
+  end
+
+  def create?
+  	new?
   end
 end
