@@ -17,13 +17,13 @@
   <p><%= link_to "Delete your Reservation", concert_hall_reservations_path(@concert_hall) %></p>
 <% end %>
 
-
 <% if policy(@concert_hall).edit? %>
   <p><%= link_to "Update this Concert Hall", edit_concert_hall_path(@concert_hall) %></p>
 <% end %>
 
 <% if policy(@concert_hall).destroy? %>
   <p><%= link_to "Remove this Concert Hall", concert_hall_path(@concert_hall), method: :delete, data: { confirm: "Are you sure?" } %></p>
+
 <% end %>
 
 <%= link_to "Back to all Concert Halls", concert_halls_path %>
