@@ -1,0 +1,18 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="banner-container mx-auto flex-direction: column">
+    <div class="hall-name d-flex justify-content-center m-3">
+      <h1><%= @concert_hall.name %></h1>
+    </div>
+    <div class="d-flex justify-content-between">
+      <p>Localização: <%= @concert_hall.location %></p>
+      <p>Capacidade: <%= @concert_hall.capacity %></p>
+    </div>
+    <div class="d-flex justify-content-between">
+      <p>Estilo musical: <%= @concert_hall.styles %></p>
+      <p>Preço: <%= @concert_hall.price %></p>
+    </div>
+    <div  class="d-flex justify-content-center m-3">
+      <%= link_to "Create Reservation", new_concert_hall_reservation_path(@concert_hall), class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>

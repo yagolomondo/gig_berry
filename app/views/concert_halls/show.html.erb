@@ -1,9 +1,4 @@
-<h1><%= @concert_hall.name %></h1>
-<p>Localização: <%= @concert_hall.location %></p>
-<p>Capacidade: <%= @concert_hall.capacity %></p>
-<p>Estilo musical: <%= @concert_hall.styles %></p>
-<p>Preço: <%= @concert_hall.price %></p>
-<p><%= link_to "Create Reservation", new_concert_hall_reservation_path(@concert_hall) %></p>
+<%= render 'pages/banner' %>
 <p><%= link_to "See Your Reservation(s)", concert_hall_reservations_path(@concert_hall) %></p>
 <% @concert_halls.each do |concert_hall| %>
   <% if policy(concert_hall).edit? %>
