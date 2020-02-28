@@ -3,7 +3,7 @@
 <p>Capacidade: <%= @concert_hall.capacity %></p>
 <p>Estilo musical: <%= @concert_hall.styles %></p>
 <p>Preço: <%= @concert_hall.price %></p>
-<% if policy(Reservation).create? %>
+<% if current_user != @concert_hall.user %>
 	<p><%= link_to "Create Reservation", new_concert_hall_reservation_path(@concert_hall) %>
 <% end %>
 </p>
