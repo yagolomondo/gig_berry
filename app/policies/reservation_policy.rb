@@ -5,6 +5,14 @@ class ReservationPolicy < ApplicationPolicy
     end
   end
 
+  def index
+    record.user == user || record.concert_hall.user == user
+  end
+
+  def show
+    record.user == user || record.concert_hall.user == user
+  end
+
   def new?
   	record.concert_hall.user != user
   end
@@ -12,4 +20,9 @@ class ReservationPolicy < ApplicationPolicy
   def create?
   	new?
   end
+
+  # def destroy?
+  #   record.user == user || record.concert_hall.user == user
+  # end
+
 end
