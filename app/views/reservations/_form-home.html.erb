@@ -2,24 +2,24 @@
     <div class="section-center">
       <div class="container">
         <div class="row">
-
           <!-- SEARCH FORM -->
           <div class="col-md-4 col-md-pull-7">
             <div class="booking-form">
-              <form>
+
+              <form action="<%= concert_halls_path %>">
                 <div class="form-group">
                   <span class="form-label">Your Destination</span>
                   <input class="form-control" type="text" placeholder="Enter a destination or hotel name">
                 </div>
+
                 <div class="row">
-                  <div class="col-sm-6">
+                  <div class="col-sm-12">
                     <div class="form-group">
                       <span class="form-label">Check In</span>
                       <input class="form-control" type="date" required>
-
                     </div>
                   </div>
-                  <div class="col-sm-6">
+                  <div class="col-sm-12">
                     <div class="form-group">
                       <span class="form-label">Check out</span>
                       <input class="form-control" type="date" required>
@@ -41,18 +41,16 @@
                     </div>
                   </div>
                 </div>
-                <!-- BUTTON -->
+                <!-- BUTTON  -->
                 <div class="form-btn">
-                  <h5><%= link_to "Search", concert_halls_path, class: 'submit-btn' %></h5>
+                  <h5><%= submit_tag "Search", class: 'submit-btn' %></h5>
 
-                  <!-- <button class="submit-btn">Search</button> -->
                 </div>
-
               </form>
-            </div>
+         </div>
           </div>
 
-          <!-- DESCRIPTION -->
+         <!-- DESCRIPTION -->
           <div class="col-md-7 col-md-push-5">
             <div class="booking-cta">
               <h1>Book your concert hall !</h1>
