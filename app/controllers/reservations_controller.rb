@@ -13,10 +13,12 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    authorize @reservation
     @concert_hall = ConcertHall.find(params[:concert_hall_id])
   end
 
   def create
+    authorize @reservation
     @concert_hall = ConcertHall.find(params[:concert_hall_id])
     @reservation = Reservation.new(reservation_params)
     @reservation.concert_hall = @concert_hall
