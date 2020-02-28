@@ -8,7 +8,6 @@ class ConcertHallsController < ApplicationController
   end
 
   def show
-    @concert_halls = policy_scope(ConcertHall).order(created_at: :desc)
   end
 
   def new

@@ -21,8 +21,8 @@ class ReservationPolicy < ApplicationPolicy
   	new?
   end
 
-  # def destroy?
-  #   record.user == user || record.concert_hall.user == user
-  # end
+  def destroy?
+    record.user == user || record.concert_hall.user == user
+  end
 
 end
