@@ -5,16 +5,3 @@
 <p>Styles: <%= current_user.styles %></p>
 <%= link_to "Edit your Profile", edit_user_registration_path, class: "btn btn-primary" %>
 <%= link_to "Delete your Profile", user_registration_path, method: :delete, class: "btn btn-primary" %>
-
-<p>
-<h4>My Reservations</h4>
-<% if current_user.reservations.empty? %>
-  <p>No reservations yet</p>
-<% else %>
-  <% current_user.reservations.each do |reservation| %>
-    <p>Reserved <%= reservation.concert_hall.name %> from <%= reservation.start_date.strftime('%d/%m/%Y %H:%M') %> to <%= reservation.end_date.strftime('%d/%m/%Y %H:%M') %></p>
-    <%= link_to "Delete this Reservation", reservation_path(reservation), method: :delete, class: "btn btn-secondary" %>
-  <% end %>
-<% end  %>
-<p>
-<p>
