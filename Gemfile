@@ -32,5 +32,7 @@ end
 gem 'devise'
 # Pundit gem used for authorization
 gem 'pundit'
+# Geocode gem used to transform address into coordinates and display on map
+gem 'geocoder'
 # Pg-Search gem used for the search function
 gem 'pg_search', '~> 2.3.0'
