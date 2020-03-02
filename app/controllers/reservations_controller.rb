@@ -3,26 +3,27 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :destroy]
 
   def index
-    @concert_hall = ConcertHall.find(params[:concert_hall_id])
-    @reservations = @concert_hall.reservations
+    # @concert_hall = ConcertHall.find(params[:concert_hall_id])
+    @reservations = Reservation.where(user_id: params[:user_id])
+    @reservations = policy_scope(Reservation).order(created_at: :desc)
   end
 
   def show
   end
 
-
   def new
     @reservation = Reservation.new
-    authorize @reservation
     @concert_hall = ConcertHall.find(params[:concert_hall_id])
+    @reservation.concert_hall = @concert_hall
+    authorize @reservation
   end
 
   def create
-    authorize @reservation
     @concert_hall = ConcertHall.find(params[:concert_hall_id])
     @reservation = Reservation.new(reservation_params)
     @reservation.concert_hall = @concert_hall
     @reservation.user = current_user
+    authorize @reservation
 
     # @reservation.user = current_user
 
@@ -34,10 +35,10 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+    authorize @reservation
     @reservation.destroy
-    redirect_to concert_hall_path(@reservation.concert_hall)
+    redirect_to user_reservations_path(current_user.id)
   end
-
 
   private
 

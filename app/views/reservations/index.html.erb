@@ -1,14 +1,16 @@
-<h1>RESERVATIONS FOR <%= @concert_hall.name %></h1>
+<h1> Manage my reservations </h1>
 
 <% if @reservations.nil? %>
-  <p> Your reservation do not exist</p>
+  <p> You did not book any concert hall yet! </p>
+  <%= link_to "Book a concert hall", root_path %>
 
 <% else %>
   <% @reservations.each do |reservation| %>
-    <p>Reserved from <%= reservation.start_date.strftime('%d/%m/%Y %H:%M') %> to <%= reservation.end_date.strftime('%d/%m/%Y %H:%M') %></p>
+    <p> <%=reservation.concert_hall.name%> booked from <%= reservation.start_date.strftime('%d/%m/%Y %H:%M') %> to <%= reservation.end_date.strftime('%d/%m/%Y %H:%M') %>
+    <%= link_to "Delete this reservation", reservation_path(reservation), method: :delete, class: "btn btn-secondary" %></p>
   <% end %>
 <% end  %>
 
-
-
-<%= link_to "Back to #{@concert_hall.name}", concert_hall_path(@concert_hall) %>
+<p>
+<p>
+<%= link_to "Book another concert hall", root_path %>

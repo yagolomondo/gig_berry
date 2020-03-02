@@ -3,12 +3,37 @@ class ConcertHallsController < ApplicationController
   before_action :set_concert_hall, only: [:show, :edit, :update, :destroy]
 
   def index
-    @concert_halls = ConcertHall.all
+    @concert_halls = ConcertHall.geocoded #returns concert_halls with coordinates
+    @markers = @concert_halls.map do |concert_hall|
+      {
+        lat: concert_hall.latitude,
+        lng: concert_hall.longitude
+      }
+    end
     @concert_halls = policy_scope(ConcertHall).order(created_at: :desc)
+    if params[:location] == ""
+      @concert_halls = ConcertHall.all
+    else
+      @concert_halls = ConcertHall.search_by_location_and_styles(params[:location])
+    end
+    # <-- Code um nach Location UND Style zu filtern: -->
+
+    # if params[:location] == "" && params[:styles] == ""
+    #   @concert_halls = ConcertHall.all
+    # elsif params[:location] == "" && params[:styles] != ""
+    #   @concert_halls = ConcertHall.search_by_location_and_styles(params[:styles])
+    # elsif params[:styles] == "" && params[:location] != ""
+    #   @concert_halls = ConcertHall.search_by_location_and_styles(params[:location])
+    # else
+    #   @concert_halls_location = ConcertHall.search_by_location_and_styles(params[:location])
+    #   @concert_halls = []
+    #   @concert_halls_location.each do |concert_hall|
+    #     @concert_halls << concert_hall if concert_hall.styles == params[:styles]
+    #   end
+    # end
   end
 
   def show
-    @concert_halls = policy_scope(ConcertHall).order(created_at: :desc)
   end
 
   def new
