@@ -32,3 +32,5 @@ end
 gem 'devise'
 # Pundit gem used for authorization
 gem 'pundit'
+# Geocoder gem used for geocoding
+gem 'geocoder'
