@@ -11,7 +11,7 @@ class ConcertHallsController < ApplicationController
       }
     end
     @concert_halls = policy_scope(ConcertHall).order(created_at: :desc)
-    if params[:location] != nil
+    unless params[:location].nil?
       if params[:location] == ""
         @concert_halls = ConcertHall.all
       else
