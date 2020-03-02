@@ -1,28 +1,68 @@
-.card {
-  background-size: cover;
-  background-position: center;
-  height: 150px;
-  border-radius: 1px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  font-size: 22px;
-  color: white;
-  font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
-  margin: 3px;
-  margin-top: 15px;
-}
-
 .cards {
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
-grid-gap: 16px;
 flex-grow: 1;
+grid-gap: 16px;
+padding: 0px 10px;
 }
 
-.cards img {
-  max-width:50%;
-  max-height:50%;
+@media(max-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.img:last-child {
+  margin-right: 0;
+}
+img {max-width:100%;}
+
+.price-stamp{
+  // margin: -200px 0 0 12px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 22px;
+  text-shadow: 0 0 6px #615e61;
+  margin-top: -25px;
+}
+.description{
+  // margin: 180px 0 0 0;
+  font-size: 14px;
+  color: #484848;
+  text-decoration: none;
+  padding: 10px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.hall-price {
+  float: right;
+}
+
+.single-card {
+
+  background-image: url("https://a2.muscache.com/im/pictures/6152848/b04eddeb_original.jpg?aki_policy=x_medium");
+  max-width: 100%;
+  max-height: 97%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  position: relative;
+
+  }
+.single-card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.18), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+#map {
+  height: 100vh;
 }

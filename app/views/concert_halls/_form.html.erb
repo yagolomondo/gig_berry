@@ -17,7 +17,11 @@
       <%= f.input :capacity %>
       <%= f.input :styles %>
       <%= f.input :price %>
+      <% if @concert_hall.new_record? %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <% end %>
       <%= f.button :submit, class: 'btn btn-primary' %>
     </div>
   <% end %>
+  <p><%= link_to "Cancel reservation", concert_halls_path %></p>
 </div>
