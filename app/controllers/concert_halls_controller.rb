@@ -4,6 +4,13 @@ class ConcertHallsController < ApplicationController
 
   def index
     @concert_halls = ConcertHall.all
+    @concert_halls = ConcertHall.geocoded #returns concert_halls with coordinates
+    @markers = @concert_halls.map do |concert_hall|
+      {
+        lat: concert_hall.latitude,
+        lng: concert_hall.longitude
+      }
+    end
     @concert_halls = policy_scope(ConcertHall).order(created_at: :desc)
   end
 
