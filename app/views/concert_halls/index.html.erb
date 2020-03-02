@@ -1,6 +1,6 @@
-    <% if policy(ConcertHall).create? %>
-      <p><%= link_to "+ Add Concert Hall", new_concert_hall_path, :class => "btn btn-outline-primary" %></p>
-    <% end %>
+<% if policy(ConcertHall).create? %>
+  <p><%= link_to "+ Add Concert Hall", new_concert_hall_path, :class => "btn btn-outline-primary" %></p>
+<% end %>
 
 <class class="index-and-map">
   <!-- CARDS -->
@@ -23,11 +23,12 @@
   <!-- MAP -->
   <div
     id="map"
-    style="width: 100%;
+    style="width: 50%;
     height: 600px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
+  >
+  </div>
 </class>
 
 
