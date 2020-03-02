@@ -1,8 +1,8 @@
 <h1><%= @concert_hall.name %></h1>
-<p>Localização: <%= @concert_hall.location %></p>
-<p>Capacidade: <%= @concert_hall.capacity %></p>
-<p>Estilo musical: <%= @concert_hall.styles %></p>
-<p>Preço: <%= @concert_hall.price %></p>
+<p>Location: <%= @concert_hall.location %></p>
+<p>Capacity: <%= @concert_hall.capacity %></p>
+<p>Style(s): <%= @concert_hall.styles %></p>
+<p>Price: <%= @concert_hall.price %></p>
 
 <% if current_user != @concert_hall.user %>
 	<p><%= link_to "Create a Reservation", new_concert_hall_reservation_path(@concert_hall) %>
