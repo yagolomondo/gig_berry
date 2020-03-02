@@ -4,8 +4,8 @@ class ReservationsController < ApplicationController
 
   def index
     # @concert_hall = ConcertHall.find(params[:concert_hall_id])
-    @reservations = Reservation.where(user_id: params[:user_id])
     @reservations = policy_scope(Reservation).order(created_at: :desc)
+    @reservations = Reservation.where(user_id: params[:user_id])
   end
 
   def show
