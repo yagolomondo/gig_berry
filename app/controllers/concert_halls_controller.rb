@@ -25,7 +25,7 @@ class ConcertHallsController < ApplicationController
       }
     end
     @concert_halls = policy_scope(ConcertHall).order(created_at: :desc)
-    # <-- Code um nach Location UND Style zu filtern: --> 
+    # <-- Code um nach Location UND Style zu filtern: -->
 
     # if params[:location] == "" && params[:styles] == ""
     #   @concert_halls = ConcertHall.all
@@ -40,6 +40,10 @@ class ConcertHallsController < ApplicationController
     #     @concert_halls << concert_hall if concert_hall.styles == params[:styles]
     #   end
     # end
+  end
+
+  def display
+    @concert_halls = ConcertHall.where(user_id: params[:user_id])
   end
 
   def show
