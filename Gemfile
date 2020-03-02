@@ -32,3 +32,5 @@ end
 gem 'devise'
 # Pundit gem used for authorization
 gem 'pundit'
+# Pg-Search gem used for the search function
+gem 'pg_search', '~> 2.3.0'
