@@ -1,4 +1,7 @@
 <h1><%= @concert_hall.name %></h1>
+<% @concert_hall.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 <p>Location: <%= @concert_hall.location %></p>
 <p>Capacity: <%= @concert_hall.capacity %></p>
 <p>Style(s): <%= @concert_hall.styles %></p>
