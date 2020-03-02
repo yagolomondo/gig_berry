@@ -3,7 +3,7 @@ class ConcertHallsController < ApplicationController
   before_action :set_concert_hall, only: [:show, :edit, :update, :destroy]
 
   def index
-    @concert_halls = ConcertHall.all
+    @concert_halls = ConcertHall.search_by_location_and_styles("Rio de Janeiro")
     @concert_halls = policy_scope(ConcertHall).order(created_at: :desc)
   end
 

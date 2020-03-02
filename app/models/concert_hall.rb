@@ -3,8 +3,8 @@ class ConcertHall < ApplicationRecord
   has_many :reservations, dependent: :destroy
 
   include PgSearch::Model
-  pg_search_scope :search_by_name_and_styles,
-    against: [ :name, :styles ],
+  pg_search_scope :search_by_location_and_styles,
+    against: [ :location, :styles ],
     using: {
       tsearch: { prefix: true }
     }
