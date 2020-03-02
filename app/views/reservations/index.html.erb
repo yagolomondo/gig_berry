@@ -2,6 +2,7 @@
 
 <% if @reservations.nil? %>
   <p> You did not book any concert hall yet! </p>
+  <%= link_to "Book a concert hall", root_path %>
 
 <% else %>
   <% @reservations.each do |reservation| %>
