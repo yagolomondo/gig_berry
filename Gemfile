@@ -32,3 +32,5 @@ end
 gem 'devise'
 # Pundit gem used for authorization
 gem 'pundit'
+# Geocode gem used to transform address into coordinates and display on map
+gem 'geocoder'
