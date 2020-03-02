@@ -1,14 +1,22 @@
 <% if policy(ConcertHall).create? %>
-  <p><%= link_to "Add Concert Hall", new_concert_hall_path %></p>
+  <p><%= link_to "+ Add Concert Hall", new_concert_hall_path, :class => "btn btn-outline-primary" %></p>
 <% end %>
 
-<class class="flexbox">
+<class class="index-and-map">
   <!-- CARDS -->
   <div class="cards">
     <% @concert_halls.each do |concert_hall| %>
-      <div>
-        <p><%= link_to concert_hall.name, concert_hall_path(concert_hall) %></p>
-        <%= cl_image_tag concert_hall.photos[0].key, height: 300, width: 400, crop: :fill %>
+      <div class='single-card'>
+      <!-- <div class="img"><img src="https://a2.muscache.com/im/pictures/6152848/b04eddeb_original.jpg?aki_policy=x_medium"> -->
+          <div class="description">
+            <div class='hall-name'>
+              <p><%= link_to concert_hall.name, concert_hall_path(concert_hall) %></p>
+              <%= cl_image_tag concert_hall.photos[0].key, height: 300, width: 400, crop: :fill %>
+            </div>
+            <div class='hall-price'>
+              <div class="price-stamp">R$ <%= concert_hall.price %></div>
+            </div>
+          </div>
       </div>
     <% end %>
   </div>
@@ -22,3 +30,6 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
 </class>
+
+
+
