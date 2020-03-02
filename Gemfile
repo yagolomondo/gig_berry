@@ -36,3 +36,5 @@ gem 'pundit'
 gem 'geocoder'
 # Pg-Search gem used for the search function
 gem 'pg_search', '~> 2.3.0'
+# Cloudinary gem used for image handling
+gem 'cloudinary', '~> 1.12.0'

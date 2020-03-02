@@ -18,7 +18,7 @@ class ConcertHallsController < ApplicationController
         @concert_halls = ConcertHall.search_by_location_and_styles(params[:location])
       end
     end
-
+    
     # <-- Code um nach Location UND Style zu filtern: -->
 
     # if params[:location] == "" && params[:styles] == ""
@@ -77,7 +77,7 @@ class ConcertHallsController < ApplicationController
   private
 
   def concert_hall_params
-    params.require(:concert_hall).permit(:name, :location, :capacity, :styles, :price, :user_id)
+    params.require(:concert_hall).permit(:name, :location, :capacity, :styles, :price, :user_id, :body, photos: [])
   end
 
   def set_concert_hall

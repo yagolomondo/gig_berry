@@ -10,7 +10,8 @@
       <!-- <div class="img"><img src="https://a2.muscache.com/im/pictures/6152848/b04eddeb_original.jpg?aki_policy=x_medium"> -->
           <div class="description">
             <div class='hall-name'>
-              <p> <%= link_to concert_hall.name, concert_hall_path(concert_hall)%></p>
+              <p><%= link_to concert_hall.name, concert_hall_path(concert_hall) %></p>
+              <%= cl_image_tag concert_hall.photos[0].key, height: 300, width: 400, crop: :fill %>
             </div>
             <div class='hall-price'>
               <div class="price-stamp">R$ <%= concert_hall.price %></div>
