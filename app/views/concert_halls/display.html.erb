@@ -1,6 +1,13 @@
+<div class="btn-add-concert">
+  <%= link_to "Add Concert Hall", new_concert_hall_path, class: "btn btn-secondary" %>
+</div>
 
-<%= link_to "Add Concert Hall", new_concert_hall_path, class: "btn btn-primary" %>
+<div class="title-ch">
+  <h2> My Concert Halls</h2>
+</div>
 
 <div class="cards-display">
-  <%= render 'single_card' %>
+  <% @concert_halls.each do |concert_hall| %>
+    <%= render 'single_card', concert_hall: concert_hall %>
+  <% end %>
 </div>
