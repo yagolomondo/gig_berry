@@ -6,25 +6,15 @@
   <!-- CARDS -->
   <div class="cards">
     <% @concert_halls.each do |concert_hall| %>
-      <!-- <div class='single-card' style="background-image: url('<% unless concert_hall.photos.empty? %>
-        <%= cl_image_tag concert_hall.photos[0].key, height: 300, width: 400, crop: :fill %>
-      <% else %>
-        <%= cl_image_tag "zh2eulzaxjopd9eeuibj" %>
-      <% end %>');"> -->
-      <!-- <div class="img"><img src="https://a2.muscache.com/im/pictures/6152848/b04eddeb_original.jpg?aki_policy=x_medium"> -->
-          <div class="description">
-            <div class='hall-name'>
-              <p><%= link_to concert_hall.name, concert_hall_path(concert_hall) %></p>
-              <% unless concert_hall.photos.empty? %>
-                <%= cl_image_tag concert_hall.photos[0].key, height: 300, width: 400, crop: :fill %>
-              <% else %>
-                <%= cl_image_tag "zh2eulzaxjopd9eeuibj", height: 300, width: 400, crop: :fill %>
-              <% end %>
-            </div>
-            <div class='hall-price'>
-              <div class="price-stamp">R$ <%= concert_hall.price %></div>
-            </div>
+      <div class='single-card' style="background-image: url('<% unless concert_hall.photos.empty? %><%= cl_image_path concert_hall.photos[0].key, crop: :fill %><% else %><%= cl_image_path "zh2eulzaxjopd9eeuibj", crop: :fill %><% end %>')">
+        <div class="description">
+          <div class='hall-name'>
+            <p><%= link_to concert_hall.name, concert_hall_path(concert_hall) %></p>
           </div>
+          <div class='hall-price'>
+            <div class="price-stamp">R$ <%= concert_hall.price %></div>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
@@ -32,7 +22,7 @@
   <!-- MAP -->
   <div
     id="map"
-    style="width: 50%;
+    style="width: 40%;
     height: 600px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
