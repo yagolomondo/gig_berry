@@ -64,19 +64,28 @@ img {max-width:100%;}
 }
 
 .popup-card {
+  padding: 12px;
   background-size: cover;
   background-position: center;
   justify-content: center;
   align-items: center;
-  color: rgb(243,170,41);
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 4px;
 }
+.popup-card a {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.popup-card a:hover {
+  text-decoration: none;
+  text-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
 .popup-card p {
-  color: rgb(243,170,41);
+  margin-top: 4px;
+  color: white;
   font-size: 16px;
   font-weight: lighter;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-bottom: 0;
 }

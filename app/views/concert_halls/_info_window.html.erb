@@ -1,4 +1,4 @@
-<div class="popup-card" style="background-image: linear-gradient(rgba(65,82,112,0.3), rgba(65,82,112,0.3)), url('<% unless concert_hall.photos.empty? %><%= cl_image_path concert_hall.photos[0].key, crop: :fill %><% else %><%= cl_image_path "zh2eulzaxjopd9eeuibj", crop: :fill %><% end %>')">
-  <%= concert_hall.name %>
+<div class="popup-card" style="background-image: linear-gradient(rgba(65,82,112,0.5), rgba(65,82,112,0.5)), url('<% unless concert_hall.photos.empty? %><%= cl_image_path concert_hall.photos[0].key, crop: :fill %><% else %><%= cl_image_path "zh2eulzaxjopd9eeuibj", crop: :fill %><% end %>')">
+  <%= link_to concert_hall.name, concert_hall_path(concert_hall) %>
   <p><%= concert_hall.location %></p>
 </div>
