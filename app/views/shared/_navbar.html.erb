@@ -11,6 +11,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+        <% if current_user.concert_halls.empty? %>
+          <li class="nav-item host-buttom"><button>
+            <%= link_to "Host", new_concert_hall_path, class: "nav-link" %>
+          </button></li>
+        <% end %>
         <li class="nav-item active">
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
@@ -18,11 +23,6 @@
           <%= link_to "Reservations",  user_reservations_path(current_user.id), class: "nav-link" %>
         </li>
 
-        <% if current_user.concert_halls.empty? %>
-          <li class="nav-item">
-            <%= link_to "Become a Host", new_concert_hall_path, class: "nav-link" %>
-          </li>
-        <% end %>
 
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
