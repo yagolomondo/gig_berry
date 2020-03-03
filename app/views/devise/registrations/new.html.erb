@@ -3,9 +3,8 @@
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
-
+  
     <div class="form-inputs">
-
       <div>
       <%= f.input :name,
                   required: true,
@@ -32,6 +31,10 @@
       <%= f.input :age,
                   required: true,
                   input_html: { autocomplete: "age" } %>
+      </div>
+      <div>
+      <%= f.input :photo,
+                  as: :file %>
       </div>
     </div>
 
