@@ -6,7 +6,11 @@
   <!-- CARDS -->
   <div class="cards">
     <% @concert_halls.each do |concert_hall| %>
-      <div class='single-card'>
+      <!-- <div class='single-card' style="background-image: url('<% unless concert_hall.photos.empty? %>
+        <%= cl_image_tag concert_hall.photos[0].key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <%= cl_image_tag "zh2eulzaxjopd9eeuibj" %>
+      <% end %>');"> -->
       <!-- <div class="img"><img src="https://a2.muscache.com/im/pictures/6152848/b04eddeb_original.jpg?aki_policy=x_medium"> -->
           <div class="description">
             <div class='hall-name'>
