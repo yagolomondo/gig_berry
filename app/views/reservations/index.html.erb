@@ -27,7 +27,7 @@
           <div style="padding: 10px ">
     				<h5><%=reservation.concert_hall.name%></h5>
     		    <p>  booked from <%= reservation.start_date.strftime('%d/%m/%Y %H:%M') %> to <%= reservation.end_date.strftime('%d/%m/%Y %H:%M') %></p>
-    		    <p><%= link_to "Delete this reservation", reservation_path(reservation), method: :delete, class: "btn btn-outline-dark" %></p>
+    		    <p><%= link_to "Delete", reservation_path(reservation), method: :delete, class: "btn btn-danger" %></p>
           </div>
   			</div>
   	  </div>
@@ -36,5 +36,5 @@
 
 <% end  %>
 
-<p class="btn btn-secondary"><%= link_to "Book a concert hall", root_path %></p>
+<p class="btn btn-outline-primary" style="margin-left: 40%"><%= link_to "Book a concert hall", root_path %></p>
 
