@@ -1,0 +1,6 @@
+<% @concert_halls.each do |concert_hall| %>
+ <p> <%= link_to concert_hall.name, concert_hall_path(concert_hall.id)%> </p>
+ <p>Location: <%= concert_hall.location %></p>
+ <p>Style: <%= concert_hall.styles %></p>
+ <p>Capacity: <%= concert_hall.capacity %></p>
+<% end %>

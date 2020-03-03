@@ -1,7 +1,12 @@
 <h1><%= @concert_hall.name %></h1>
-<% @concert_hall.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% unless @concert_hall.photos.empty? %>
+  <% @concert_hall.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+<% else %>
+  <%= cl_image_tag "zh2eulzaxjopd9eeuibj", height: 300, width: 400, crop: :fill %>
 <% end %>
+
 <p>Location: <%= @concert_hall.location %></p>
 <p>Capacity: <%= @concert_hall.capacity %></p>
 <p>Style(s): <%= @concert_hall.styles %></p>
@@ -14,10 +19,6 @@
 
 <% if policy(@concert_hall).show? %>
   <p><%= link_to "See Your Reservation(s)", concert_hall_reservations_path(@concert_hall) %></p>
-<% end %>
-
-<% if policy(@concert_hall).destroy? %>
-  <p><%= link_to "Delete your Reservation", concert_hall_reservations_path(@concert_hall) %></p>
 <% end %>
 
 <% if policy(@concert_hall).edit? %>

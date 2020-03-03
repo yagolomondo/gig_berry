@@ -11,7 +11,11 @@
           <div class="description">
             <div class='hall-name'>
               <p><%= link_to concert_hall.name, concert_hall_path(concert_hall) %></p>
-              <%= cl_image_tag concert_hall.photos[0].key, height: 300, width: 400, crop: :fill %>
+              <% unless concert_hall.photos.empty? %>
+                <%= cl_image_tag concert_hall.photos[0].key, height: 300, width: 400, crop: :fill %>
+              <% else %>
+                <%= cl_image_tag "zh2eulzaxjopd9eeuibj", height: 300, width: 400, crop: :fill %>
+              <% end %>
             </div>
             <div class='hall-price'>
               <div class="price-stamp">R$ <%= concert_hall.price %></div>
