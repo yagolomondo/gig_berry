@@ -1,13 +1,16 @@
-<div class="profile">
-  <div class="profile-card">
-    <h3>Name: <%= current_user.name %></h3>
-    <p>Email: <%= current_user.email %></p>
-    <p>Age: <%= current_user.age %></p>
-    <p>Description: <%= current_user.description %></p>
-    <p>Styles: <%= current_user.styles %></p>
-  </div>
+<div class="layout"></div>
+<div class="profile-card">
+  <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", :class => "avatar avatar-profile" %>
+  <h1>Hi, <strong><%= current_user.name %></strong> !</h1>
+  <p><%= current_user.age %> yo</p>
+  <p> <strong> Description </strong><br> <%= current_user.description %></p>
+  <p><strong> Styles </strong><br> <%= current_user.styles %></p>
+  <p>email: <%= current_user.email %></p>
+  <br>
   <div class="buttons">
     <%= link_to "Edit your Profile", edit_user_registration_path, class: "btn btn-primary" %>
     <%= link_to "Delete your Profile", user_registration_path, method: :delete, class: "btn btn-danger" %>
   </div>
+<br>
 </div>
+
