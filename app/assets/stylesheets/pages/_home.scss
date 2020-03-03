@@ -15,7 +15,7 @@
 
 #booking {
   font-family: 'Montserrat', sans-serif;
-  background-image: url('../img/background.jpg');
+  background-image: url('https://media1.giphy.com/media/Ptds2W773np9m/giphy.gif?cid=790b7611be5c86b185d0e51828e370cf4c603c1fbb387500&rid=giphy.gif');
   background-size: cover;
   background-position: center;
 }
@@ -27,7 +27,7 @@
   right: 0;
   bottom: 0;
   top: 0;
-  background: rgba(47, 103, 177, 0.6);
+background: linear-gradient(0deg, rgba(0,0,0,0.07746848739495793) 0%, rgba(255,255,255,1) 100%);
 }
 
 .booking-form {
@@ -44,7 +44,7 @@
 }
 
 .booking-form .form-control {
-  background-color: #ebecee;
+  // background-color: #ebecee;
   border-radius: 4px;
   border: none;
   height: 40px;
@@ -130,11 +130,12 @@
 .booking-cta h1 {
   font-size: 52px;
   text-transform: uppercase;
-  color: #fff;
   font-weight: 700;
+  color: #FFFFFF;
+text-shadow: #474747 3px 5px 2px;
 }
 
 .booking-cta p {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.8);
+font-size: 16px;
+color: black;
 }
