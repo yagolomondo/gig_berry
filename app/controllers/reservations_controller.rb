@@ -28,7 +28,7 @@ class ReservationsController < ApplicationController
     # @reservation.user = current_user
 
     if @reservation.save
-      redirect_to concert_hall_reservations_path(@concert_hall)
+      redirect_to user_reservations_path(current_user.id)
     else
       render :new
     end
