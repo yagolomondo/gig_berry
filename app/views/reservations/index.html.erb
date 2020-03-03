@@ -7,7 +7,7 @@
 
 <% if @reservations.nil? %>
   <p> You did not book any concert hall yet! </p>
-  <%= link_to "Book a concert hall", root_path %>
+  <%= link_to "Book a concert hall", root_path, class: "btn btn-secondary" %>
 
 <% else %>
 
@@ -35,4 +35,6 @@
 </div>
 
 <% end  %>
-<p class="btn btn-outline-primary"><%= link_to "Book a concert hall", root_path %></p>
+
+<p class="btn btn-secondary"><%= link_to "Book a concert hall", root_path %></p>
+
