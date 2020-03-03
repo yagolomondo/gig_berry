@@ -231,7 +231,7 @@ DEPENDENCIES
   pg_search (~> 2.3.0)
   pry-byebug
   pry-rails
-  puma
+  puma (= 4.3.2)
   pundit
   rails (= 5.2.4.1)
   redis
