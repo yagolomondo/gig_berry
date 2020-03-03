@@ -7,6 +7,14 @@ grid-gap: 16px;
 padding: 0px 10px;
 }
 
+.cards-display {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+flex-grow: 1;
+grid-gap: 16px;
+padding: 0px 10px;
+}
+
 @media(max-width: 992px) {
   .cards {
     grid-template-columns: 1fr 1fr;
@@ -53,7 +61,7 @@ img {max-width:100%;}
 .single-card {
   background-size: cover;
   background-position: center;
-  height: 50%;
+  height: 100%;
   max-width: 100%;
   max-height: 80vh;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
