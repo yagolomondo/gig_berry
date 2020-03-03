@@ -1,7 +1,13 @@
-<h3>Name: <%= current_user.name %></h3>
-<p>Email: <%= current_user.email %></p>
-<p>Age: <%= current_user.age %></p>
-<p>Description: <%= current_user.description %></p>
-<p>Styles: <%= current_user.styles %></p>
-<%= link_to "Edit your Profile", edit_user_registration_path, class: "btn btn-primary" %>
-<%= link_to "Delete your Profile", user_registration_path, method: :delete, class: "btn btn-primary" %>
+<div class="profile">
+  <div class="profile-card">
+    <h3>Name: <%= current_user.name %></h3>
+    <p>Email: <%= current_user.email %></p>
+    <p>Age: <%= current_user.age %></p>
+    <p>Description: <%= current_user.description %></p>
+    <p>Styles: <%= current_user.styles %></p>
+  </div>
+  <div class="buttons">
+    <%= link_to "Edit your Profile", edit_user_registration_path, class: "btn btn-primary" %>
+    <%= link_to "Delete your Profile", user_registration_path, method: :delete, class: "btn btn-danger" %>
+  </div>
+</div>
