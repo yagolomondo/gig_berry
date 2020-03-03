@@ -1,3 +1,5 @@
+<% require 'open-uri' %>
+
 <h1> Manage my reservations </h1>
 
 <% if @reservations.nil? %>
@@ -5,12 +7,29 @@
   <%= link_to "Book a concert hall", root_path %>
 
 <% else %>
-  <% @reservations.each do |reservation| %>
-    <p> <%=reservation.concert_hall.name%> booked from <%= reservation.start_date.strftime('%d/%m/%Y %H:%M') %> to <%= reservation.end_date.strftime('%d/%m/%Y %H:%M') %>
-    <%= link_to "Delete this reservation", reservation_path(reservation), method: :delete, class: "btn btn-secondary" %></p>
-  <% end %>
+
+
+<div class="container">
+  <div class="card-columns">
+	  <% @reservations.each do |reservation| %>
+		<div class="card" style="width: 20rem;">
+
+			<% photo = reservation.concert_hall.photos[0] %>
+			<% if photo  %>
+				<%= cl_image_tag photo.key , height: 300, width: 400, crop: :fill %>
+			<% else %>
+				<img class="card-img-top" src="https://maquinadoesporte.uol.com.br/media/imagens/maracana_concessao_governo.jpg" alt="the image alt text here">
+			<% end %>
+			<div class="card-body">
+				<h5 class="card-title text-primary"><%=reservation.concert_hall.name%></h5>
+			    <p class="card-text">  booked from <%= reservation.start_date.strftime('%d/%m/%Y %H:%M') %> to <%= reservation.end_date.strftime('%d/%m/%Y %H:%M') %></p>
+			    <p><%= link_to "Delete this reservation", reservation_path(reservation), method: :delete, class: "btn btn-outline-dark" %></p>
+			</div>
+	    </div>
+	   <% end %>
+  </div>
+</div>
+
 <% end  %>
 
-<p>
-<p>
-<%= link_to "Book a concert hall", root_path %>
+<p class="btn btn-outline-primary"><%= link_to "Book a concert hall", root_path %></p>
