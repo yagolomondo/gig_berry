@@ -1,0 +1,18 @@
+
+
+  <div class='single-card' style="background-image: url('<% unless concert_hall.photos.empty? %><%= cl_image_path concert_hall.photos[0].key, crop: :fill %><% else %><%= cl_image_path "zh2eulzaxjopd9eeuibj", crop: :fill %><% end %>')">
+    <% concert_hall.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+    <div class="description">
+      <div class='hall-name'>
+        <p><%= link_to concert_hall.name, concert_hall_path(concert_hall) %></p>
+      </div>
+      <div class='hall-price'>
+        <div class="price-stamp">R$ <%= concert_hall.price %></div>
+      </div>
+    </div>
+  </div>
+
+
+

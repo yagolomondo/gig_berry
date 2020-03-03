@@ -6,19 +6,9 @@
   <!-- CARDS -->
   <div class="cards">
     <% @concert_halls.each do |concert_hall| %>
-      <div class='single-card' style="background-image: url('<% unless concert_hall.photos.empty? %><%= cl_image_path concert_hall.photos[0].key, crop: :fill %><% else %><%= cl_image_path "zh2eulzaxjopd9eeuibj", crop: :fill %><% end %>')">
-        <div class="description">
-          <div class='hall-name'>
-            <p><%= link_to concert_hall.name, concert_hall_path(concert_hall) %></p>
-          </div>
-          <div class='hall-price'>
-            <div class="price-stamp">R$ <%= concert_hall.price %></div>
-          </div>
-        </div>
-      </div>
+      <%= render 'single_card', concert_hall: concert_hall %>
     <% end %>
   </div>
-
   <!-- MAP -->
   <div
     id="map"
