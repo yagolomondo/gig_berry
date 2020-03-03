@@ -17,11 +17,10 @@
   This concert hall can host <strong><%= @concert_hall.capacity %></strong> people.
 <div class="feature-ch">
 
-<% if current_user != @concert_hall.user %>
-  <p><%= link_to "Create a Reservation", new_concert_hall_reservation_path(@concert_hall), class: "btn btn-secondary" %>
-<% end %>
-
 <div class="options-ch">
+  <% if current_user != @concert_hall.user %>
+    <%= link_to "Create a Reservation", new_concert_hall_reservation_path(@concert_hall), class: "btn btn-secondary" %>
+  <% end %>
   <% if policy(@concert_hall).edit? %>
     <%= link_to "Update this Concert Hall", edit_concert_hall_path(@concert_hall), class: "btn btn-secondary" %>
   <% end %>
