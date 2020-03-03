@@ -1,6 +1,9 @@
 <% require 'open-uri' %>
 
+
+<div class="title-ch">
 <h1> Manage my reservations </h1>
+</div>
 
 <% if @reservations.nil? %>
   <p> You did not book any concert hall yet! </p>
@@ -9,27 +12,27 @@
 <% else %>
 
 
-<div class="container">
-  <div class="card-columns">
+<div class="container" style="height: 430px">
 	  <% @reservations.each do |reservation| %>
-		<div class="card" style="width: 20rem;">
+  		<div class="cards-display">
 
-			<% photo = reservation.concert_hall.photos[0] %>
-			<% if photo  %>
-				<%= cl_image_tag photo.key , height: 300, width: 400, crop: :fill %>
-			<% else %>
-				<img class="card-img-top" src="https://maquinadoesporte.uol.com.br/media/imagens/maracana_concessao_governo.jpg" alt="the image alt text here">
-			<% end %>
-			<div class="card-body">
-				<h5 class="card-title text-primary"><%=reservation.concert_hall.name%></h5>
-			    <p class="card-text">  booked from <%= reservation.start_date.strftime('%d/%m/%Y %H:%M') %> to <%= reservation.end_date.strftime('%d/%m/%Y %H:%M') %></p>
-			    <p><%= link_to "Delete this reservation", reservation_path(reservation), method: :delete, class: "btn btn-outline-dark" %></p>
-			</div>
-	    </div>
-	   <% end %>
-  </div>
+
+  			<div class="single-card">
+    			<% photo = reservation.concert_hall.photos[0] %>
+    			<% if photo %>
+    				<%= cl_image_tag photo.key , height: 300, width: 400, crop: :fill %>
+    			<% else %>
+    				<img src="https://maquinadoesporte.uol.com.br/media/imagens/maracana_concessao_governo.jpg" alt="the image alt text here">
+    			<% end %>
+          <div style="padding: 10px ">
+    				<h5><%=reservation.concert_hall.name%></h5>
+    		    <p>  booked from <%= reservation.start_date.strftime('%d/%m/%Y %H:%M') %> to <%= reservation.end_date.strftime('%d/%m/%Y %H:%M') %></p>
+    		    <p><%= link_to "Delete this reservation", reservation_path(reservation), method: :delete, class: "btn btn-outline-dark" %></p>
+          </div>
+  			</div>
+  	  </div>
+	  <% end %>
 </div>
 
 <% end  %>
-
 <p class="btn btn-outline-primary"><%= link_to "Book a concert hall", root_path %></p>
