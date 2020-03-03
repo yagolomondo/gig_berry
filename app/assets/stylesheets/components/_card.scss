@@ -63,6 +63,20 @@ img {max-width:100%;}
   box-shadow: 0 14px 28px rgba(0,0,0,0.18), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-#map {
-  height: 100vh;
+.popup-card {
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  color: rgb(243,170,41);
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+.popup-card p {
+  color: rgb(243,170,41);
+  font-size: 16px;
+  font-weight: lighter;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
