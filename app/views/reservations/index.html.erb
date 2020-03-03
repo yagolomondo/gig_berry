@@ -5,10 +5,16 @@
   <%= link_to "Book a concert hall", root_path %>
 
 <% else %>
+
   <% @reservations.each do |reservation| %>
-    <p> <%=reservation.concert_hall.name%> booked from <%= reservation.start_date.strftime('%d/%m/%Y %H:%M') %> to <%= reservation.end_date.strftime('%d/%m/%Y %H:%M') %>
-    <%= link_to "Delete this reservation", reservation_path(reservation), method: :delete, class: "btn btn-secondary" %></p>
+<div class="card" style="width: 20rem;">
+	<img class="card-img-top" src="https://maquinadoesporte.uol.com.br/media/imagens/maracana_concessao_governo.jpg" alt="the image alt text here">
+	<div class="card-body">
+	<h5 class="card-title text-primary"><%=reservation.concert_hall.name%></h5>
+    <p class="card-text">  booked from <%= reservation.start_date.strftime('%d/%m/%Y %H:%M') %> to <%= reservation.end_date.strftime('%d/%m/%Y %H:%M') %></p>
+    <p><%= link_to "Delete this reservation", reservation_path(reservation), method: :delete, class: "btn btn-outline-dark" %></p>
   <% end %>
+ </div>
 <% end  %>
 
 <p>
