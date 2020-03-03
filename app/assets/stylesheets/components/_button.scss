@@ -3,14 +3,23 @@ margin: 22px 36px 0;
 }
 
 .buttons {
+color: white;
 margin: 3px 3px;
 width: max-content;
 }
 
+.buttons a {
+ color: white;
+}
+
 .btn {
-    background-color: blue;
     border: none;
     border-radius: 20px ;
+    color: white;
+}
+
+.btn a {
+    color: white;
 }
 
 .btn-add-concert {
