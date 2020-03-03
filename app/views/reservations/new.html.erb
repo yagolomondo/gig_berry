@@ -1,3 +1,6 @@
+<div class="layout"></div>
+<div class="container">
+<div class="profile-card">
 <h1>NEW RESERVATION</h1>
 
 <div class="container">
@@ -14,9 +17,13 @@
     <div class="form-container">
       <%= f.input :start_date %>
       <%= f.input :end_date %>
+      <div id="create-reservation">
       <%= f.button :submit, class: 'btn btn-primary' %>
+      </div>
     </div>
   <% end %>
-  <p><%= link_to "Cancel reservation", concert_halls_path %></p>
+  <p><%= link_to "Cancel reservation", concert_halls_path, class: "btn btn-danger" %></p>
 
+</div>
+</div>
 </div>
