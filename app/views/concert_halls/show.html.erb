@@ -11,11 +11,16 @@
   <% end %>
 </div>
 
+<br>
 
 <div class="feature-ch">
-  <p> A lovely concert hall in <strong><%= @concert_hall.location%></strong> where you can play <strong><%= @concert_hall.styles %> </strong>for <%= @concert_hall.price %> R$ a day.</p>
-  This concert hall can host <strong><%= @concert_hall.capacity %></strong> people.
+  A lovely concert hall in <strong><%= @concert_hall.location%></strong> where you can play <strong><%= @concert_hall.styles %> </strong>for <%= @concert_hall.price %> R$ a day.
+</div>
 <div class="feature-ch">
+  This concert hall can host <strong><%= @concert_hall.capacity %></strong> people.
+</div>
+
+<br>
 
 <div class="options-ch">
   <% if current_user != @concert_hall.user %>
