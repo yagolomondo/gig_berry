@@ -1,32 +1,36 @@
-<div class="container">
-  <%= simple_form_for @concert_hall do |f| %>
-    <% if @concert_hall.errors.any? %>
-      <div class="error-container">
-        <ul>
-          <% @concert_hall.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+    <%= simple_form_for @concert_hall do |f| %>
+      <% if @concert_hall.errors.any? %>
+        <div class="error-container" style="background-color: black">
+          <ul>
+            <% @concert_hall.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+
+  <div class="card-new-concerthall">
+      <div class="description-new">
+      <p>
+      <h3><strong>Gig Berry</strong> connects musicians and concert halls owners. </h3>
+      <h6> The hosts are the <strong>lifeblood of the community</strong> by providing travelers with the unique opportunity to perform. </h6>
+      <h6> <strong>Rent your concert hall</strong> and let the magic happen 🎼 </h6>
+      <p>
+        </div>
+      <div class="form-container">
+        <td><%= f.input :name %></td>
+         <% if @concert_hall.new_record? %>
+          <%= f.input :location %>
+        <% end %>
+        <%= f.input :capacity %>
+        <%= f.input :styles %>
+        <%= f.input :price %>
+        <% if @concert_hall.new_record? %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <% end %>
+        <%= f.button :submit, class: "btn btn-primary" %>
       </div>
-      <% end %>
-    <p>
-    <h5><strong>Gig Berry</strong> connects musicians and concert halls owners. </h5>
-    <h6> The hosts are the <strong>lifeblood of the community</strong> by providing travelers with the unique opportunity to perform. </h6>
-    <h6> <strong>Rent your concert hall</strong> and let the magic happen 🎼 </h6>
-    <p>
-    <div class="form-container">
-      <%= f.input :name %>
-      <% if @concert_hall.new_record? %>
-        <%= f.input :location %>
-      <% end %>
-      <%= f.input :capacity %>
-      <%= f.input :styles %>
-      <%= f.input :price %>
-      <% if @concert_hall.new_record? %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <% end %>
-      <%= f.button :submit, class: 'btn btn-primary' %>
-    </div>
-  <% end %>
-  <p><%= link_to "Cancel reservation", concert_halls_path %></p>
-</div>
+    <% end %>
+    <p><%= link_to "Cancel reservation", concert_halls_path %></p>
+  </div>
+
