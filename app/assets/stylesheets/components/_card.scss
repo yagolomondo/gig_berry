@@ -131,12 +131,35 @@ box-shadow: 0px 0px 39px 2px rgba(0,0,0,0.31);
 }
 
 p {
-margin-top: 30px;
-margin-bottom: 1rem;
+margin-bottom: 2rem;
 }
 
-////////////////////////////////////////////////////////////////////////////
-// EDIT PROFILE //
+///////////////////////////////////////////////////////////////////////////
+// NEW#CONCERTHALL
+///////////////////////////////////////////////////////////////////////////
+
+.card-new-concerthall {
+  padding: 40px;
+width: 75%;
+margin: 9% auto 7%;
+text-align: -webkit-left;
+height: 100%;
+background-color: white;
+border-radius: 8px;
+-webkit-box-shadow: 0px 0px 39px 2px rgba(0,0,0,0.31);
+-moz-box-shadow: 0px 0px 39px 2px rgba(0,0,0,0.31);
+box-shadow: 0px 0px 39px 2px rgba(0,0,0,0.31);
+
+}
+
+.form-control-file {
+    margin-left: 50px;
+}
+
+
+.description-new {
+  text-align: -webkit-center;
+}
 
 .title-ch {
   text-align:center;

@@ -7,14 +7,14 @@ margin: 3px 3px;
 width: max-content;
 }
 
-// .add-concert {
-// color: white;
-// background-color: black;
-// margin: 0px 0px 16px;
-// padding: 11px 64px;
-// text-decoration: none;
-// }
+.btn {
+    min-width: -webkit-fill-available;
+    background-color: blue;
+    border: none;
+    border-radius: 20px ;
+}
 
 .btn-add-concert {
 padding: 20px;
 }
+
