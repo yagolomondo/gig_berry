@@ -7,7 +7,8 @@ class ConcertHallsController < ApplicationController
     @markers = @concert_halls.map do |concert_hall|
       {
         lat: concert_hall.latitude,
-        lng: concert_hall.longitude
+        lng: concert_hall.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { concert_hall: concert_hall })
       }
     end
     @concert_halls = policy_scope(ConcertHall).order(created_at: :desc)
