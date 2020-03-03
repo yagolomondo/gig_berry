@@ -5,7 +5,9 @@
 <class class="index-and-map">
   <!-- CARDS -->
   <div class="cards">
-    <%= render 'single_card' %>
+    <% @concert_halls.each do |concert_hall| %>
+      <%= render 'single_card', concert_hall: concert_hall %>
+    <% end %>
   </div>
   <!-- MAP -->
   <div
